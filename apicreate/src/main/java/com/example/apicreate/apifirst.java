@@ -9,6 +9,7 @@ public class apifirst {
 	
 	int c;
 	
+	
 	@GetMapping("/printresponse")
 	public String printresponse() {
 		return "Hello Swaroop this is Rest API via Spring Boot and your response is good";
