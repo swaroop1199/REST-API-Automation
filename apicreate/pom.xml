@@ -93,7 +93,7 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<version>3.3.5</version>
 				<configuration>
-                	<mainClass>com.example.apicreate.ApicreateApplication</mainClass>
+                	<mainClass>com.example.apicreate.Apicreateapplication</mainClass>
             	</configuration>
 			</plugin>
 		</plugins>
