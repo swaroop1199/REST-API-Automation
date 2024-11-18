@@ -1,4 +1,8 @@
-FROM openjdk:17-alpine
-EXPOSE 8090
-ADD target/springbootapi-docker.jar springbootapi-docker.jar
-ENTRYPOINT ["java","-jar","/springbootapi-docker.jar"] 
+FROM maven:3.8.5-openjdk-17 AS build
+COPY . .
+RUN mvn clean package -DskipTests
+
+FROM openjdk:17.0.1-jdk-slim
+COPY --from=build /target/apicreate-0.0.1-snapshot.jar apicreate.jar
+EXPOSE 8020
+ENTRYPOINT ["java","-jar","apicreate.jar"]
