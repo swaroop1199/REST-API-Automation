@@ -4,7 +4,7 @@ COPY apicreate/pom.xml .
 RUN mvn dependency:go-offline
 COPY ./src /app/src
 RUN mvn clean package -DskipTests
-FROM openjdk:17-jdk-slim
+FROM eclipse-temurin:21
 WORKDIR /app
 COPY --from=build /app/target/apicreate-0.0.1-SNAPSHOT.jar apicreate.jar
 EXPOSE 10000
