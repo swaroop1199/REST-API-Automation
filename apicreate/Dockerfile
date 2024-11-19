@@ -2,8 +2,7 @@ FROM maven:3.9.4-eclipse-temurin-17 AS build
 WORKDIR /app
 COPY apicreate/pom.xml .
 RUN mvn dependency:go-offline
-COPY apicreate/pom.xml .
-COPY apicreate ./src
+COPY apicreate/src .
 RUN mvn clean package -DskipTests
 FROM eclipse-temurin:21
 WORKDIR /app
