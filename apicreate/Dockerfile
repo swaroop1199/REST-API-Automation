@@ -3,7 +3,7 @@ WORKDIR /app
 COPY apicreate/pom.xml .
 RUN mvn dependency:go-offline
 COPY pom.xml .
-COPY src ./src
+COPY apicreate ./src
 RUN mvn clean package -DskipTests
 FROM eclipse-temurin:21
 WORKDIR /app
